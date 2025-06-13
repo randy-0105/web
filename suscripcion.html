@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<?php
+include 'auth_check.php';
+?>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Suscripción | TDAH & Autismo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        /* Mejoras estéticas para la sección Suscripción */
+        section.suscripcion {
+            max-width: 700px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: linear-gradient(135deg, #87CEEB, #4682B4);
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: box-shadow 0.3s ease;
+        }
+        section.suscripcion:hover,
+        section.suscripcion:focus-within {
+            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+        }
+        section.suscripcion h1 {
+            color: black;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+form#formSuscripcion label {
+            display: block;
+            margin-top: 1rem;
+            font-weight: 600;
+            color: black;
+            transition: color 0.3s ease;
+        }
+        form#formSuscripcion input,
+        form#formSuscripcion select {
+            width: 100%;
+            padding: 0.6rem 1rem;
+            margin-top: 0.3rem;
+            border-radius: 8px;
+            border: 1px solid var(--morado-claro);
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        form#formSuscripcion input:focus,
+        form#formSuscripcion select:focus {
+            border-color: var(--fucsia-claro);
+            box-shadow: 0 0 8px var(--fucsia-claro);
+            outline: none;
+        }
+form#formSuscripcion button.btn-primary {
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border-radius: 12px;
+            background-color: var(--fucsia-claro);
+            color: #222;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            display: block;
+            width: 100%;
+        }
+        form#formSuscripcion button.btn-primary:hover,
+        form#formSuscripcion button.btn-primary:focus {
+            background-color: var(--morado-claro);
+            color: #fff;
+            transform: scale(1.05);
+        }
+        #respuesta-suscripcion {
+            margin-top: 1rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            min-height: 2rem;
+            text-align: center;
+            transition: color 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+            <a href="index.html">
+                <img src="IMAGENES/imagenesLogo/IsoLogo1.png" alt="Unikids Logo" style="height: 50px;" />
+            </a>
+            <a href="index.html" style="font-size: 1.8rem; font-weight: bold; color: #333; text-decoration: none;">Unikids</a>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#">Padres</a>
+                    <ul class="dropdown-content">
+                        <li><a href="parenthood/diagnostico.html">Formulario de Evaluación</a></li>
+                        <li><a href="parenthood/index.html">Testimonios</a></li>
+                        <li><a href="parenthood/consejos.html">Consejos</a></li>
+                        <li><a href="parenthood/feedback.html">Feedback</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Niños</a>
+                    <ul class="dropdown-content">
+                        <li><a href="ninos\Juegos_Educativos\juegos.html">Juegos Educativos</a></li>
+                        <li><a href="ninos\Refuersos Academico\refuersos.html">Refuerzos Académicos</a></li>
+                    </ul>
+                </li>
+                <li><a href="suscripcion.html">Suscripción</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="suscripcion">
+            <h1>Planes de Suscripción</h1>
+            <p>Elige el plan que mejor se adapte a tus necesidades y accede a contenido exclusivo.</p>
+
+<form id="formSuscripcion" novalidate>
+                <label for="plan">Selecciona un plan:</label>
+                <select id="plan" name="plan" required class="input-select">
+                    <option value="">Seleccione</option>
+                    <option value="basico">Básico - Acceso por 1 semana (Gratis)</option>
+                    <option value="premium">Premium - Acceso completo (Pago mensual)</option>
+                </select>
+
+                <label for="nombreTarjeta">Nombre en la tarjeta:</label>
+                <input type="text" id="nombreTarjeta" name="nombreTarjeta" class="input-text" />
+
+                <label for="numeroTarjeta">Número de tarjeta:</label>
+                <input type="text" id="numeroTarjeta" name="numeroTarjeta" maxlength="16" class="input-text" />
+
+                <label for="mesExpiracion">Mes de expiración:</label>
+                <select id="mesExpiracion" name="mesExpiracion" required class="input-select">
+                    <option value="">Mes</option>
+                    <option value="01">01 - Enero</option>
+                    <option value="02">02 - Febrero</option>
+                    <option value="03">03 - Marzo</option>
+                    <option value="04">04 - Abril</option>
+                    <option value="05">05 - Mayo</option>
+                    <option value="06">06 - Junio</option>
+                    <option value="07">07 - Julio</option>
+                    <option value="08">08 - Agosto</option>
+                    <option value="09">09 - Septiembre</option>
+                    <option value="10">10 - Octubre</option>
+                    <option value="11">11 - Noviembre</option>
+                    <option value="12">12 - Diciembre</option>
+                </select>
+
+                <label for="anioExpiracion">Año de expiración:</label>
+                <select id="anioExpiracion" name="anioExpiracion" required class="input-select">
+                    <option value="">Año</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                    <option value="2030">2030</option>
+                    <option value="2031">2031</option>
+                    <option value="2032">2032</option>
+                    <option value="2033">2033</option>
+                    <option value="2034">2034</option>
+                </select>
+
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" maxlength="4" class="input-text" />
+
+                <button type="submit" class="btn-primary">Suscribirse</button>
+            </form>
+
+            <div id="respuesta-suscripcion" aria-live="polite" class="respuesta-suscripcion"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Contacto</h3>
+                <p>Email: contacto@tdah-tdh.com</p>
+                <p>Teléfono: +123 456 7890</p>
+            </div>
+            <div class="social-media">
+                <h3>Síguenos</h3>
+                <ul>
+                    <li><a href="#" aria-label="Instagram">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="quick-links">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="parenthood/index.html">Para Padres</a></li>
+                    <li><a href="ninos/Juegos Educativos/juegos.html">Niños</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Unikids. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const form = document.getElementById('formSuscripcion');
+        const respuesta = document.getElementById('respuesta-suscripcion');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+
+            fetch('suscripcion.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    respuesta.textContent = data.message;
+                    respuesta.style.color = 'green';
+                    form.reset();
+                } else {
+                    respuesta.textContent = data.message;
+                    respuesta.style.color = 'red';
+                }
+            })
+            .catch(error => {
+                respuesta.textContent = 'Error al procesar la suscripción.';
+                respuesta.style.color = 'red';
+            });
+        });
+    </script>
+</body>
+</html>

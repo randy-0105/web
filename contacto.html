@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<?php
+include 'auth_check.php';
+?>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contacto | TDAH & Autismo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        /* Mejoras estéticas para la sección Contacto */
+        section.contacto {
+            max-width: 700px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: linear-gradient(135deg, #87CEEB, #4682B4);
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: box-shadow 0.3s ease;
+        }
+        section.contacto:hover,
+        section.contacto:focus-within {
+            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+        }
+        section.contacto h1,
+        section.contacto h2 {
+            color: black;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+section.contacto p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--color-texto);
+        }
+        form#formContacto label {
+            display: block;
+            margin-top: 1rem;
+            font-weight: 600;
+            color: black;
+            transition: color 0.3s ease;
+        }
+        form#formContacto input,
+        form#formContacto textarea {
+            width: 100%;
+            padding: 0.6rem 1rem;
+            margin-top: 0.3rem;
+            border-radius: 8px;
+            border: 1px solid var(--morado-claro);
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        form#formContacto input:focus,
+        form#formContacto textarea:focus {
+            border-color: var(--fucsia-claro);
+            box-shadow: 0 0 8px var(--fucsia-claro);
+            outline: none;
+        }
+form#formContacto button.btn-primary {
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border-radius: 12px;
+            background-color: var(--fucsia-claro);
+            color: #222;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            display: block;
+            width: 100%;
+        }
+        form#formContacto button.btn-primary:hover,
+        form#formContacto button.btn-primary:focus {
+            background-color: var(--morado-claro);
+            color: #fff;
+            transform: scale(1.05);
+        }
+        #respuesta-contacto {
+            margin-top: 1rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            min-height: 2rem;
+            text-align: center;
+            transition: color 0.3s ease;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+            <a href="index.html">
+                <img src="IMAGENES/imagenesLogo/IsoLogo1.png" alt="Unikids Logo" style="height: 50px;" />
+            </a>
+            <a href="index.html" style="font-size: 1.8rem; font-weight: bold; color: #333; text-decoration: none;">Unikids</a>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#">Padres</a>
+                    <ul class="dropdown-content">
+                        <li><a href="parenthood/diagnostico.html">Formulario de Evaluación</a></li>
+                        <li><a href="parenthood/index.html">Testimonios</a></li>
+                        <li><a href="parenthood/consejos.html">Consejos</a></li>
+                        <li><a href="parenthood/feedback.html">Feedback</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Niños</a>
+                    <ul class="dropdown-content">
+                        <li><a href="ninos\Juegos_Educativos\juegos.html">Juegos Educativos</a></li>
+                        <li><a href="ninos\Refuersos Academico\refuersos.html">Refuerzos Académicos</a></li>
+                    </ul>
+                </li>
+                <li><a href="suscripcion.html">Suscripción</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contacto">
+            <h1>Contacto</h1>
+            <p>Estamos aquí para ayudarte. Completa el formulario y nos pondremos en contacto contigo.</p>
+
+            <form id="formContacto" novalidate>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required class="input-text" />
+
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required class="input-text" />
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" required class="input-textarea"></textarea>
+
+                <button type="submit" class="btn-primary">Enviar Mensaje</button>
+            </form>
+
+            <div id="respuesta-contacto" aria-live="polite" class="respuesta-contacto"></div>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Contacto</h3>
+                <p>Email: contacto@tdah-autismo.com</p>
+                <p>Teléfono: +123 456 7890</p>
+            </div>
+            <div class="social-media">
+                <h3>Síguenos</h3>
+                <ul>
+                    <li><a href="#" aria-label="Instagram">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="quick-links">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="parenthood/index.html">Para Padres</a></li>
+                    <li><a href="ninos/juegos.html">Para Niños</a></li>
+                    <li><a href="suscripcion.html">Suscripción</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Unikids. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const form = document.getElementById('formContacto');
+        const respuesta = document.getElementById('respuesta-contacto');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nombre = form.nombre.value.trim();
+            const email = form.email.value.trim();
+            const mensaje = form.mensaje.value.trim();
+
+            if (!nombre || !email || !mensaje) {
+                respuesta.textContent = "Por favor, complete todos los campos.";
+                respuesta.style.color = "red";
+                return;
+            }
+
+            // Validación básica de email
+            const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+            if (!emailRegex.test(email)) {
+                respuesta.textContent = "Por favor, ingrese un correo electrónico válido.";
+                respuesta.style.color = "red";
+                return;
+            }
+
+            // Aquí se podría enviar el mensaje a un servidor o almacenarlo
+            respuesta.textContent = "Gracias por contactarnos. ¡Responderemos pronto!";
+            respuesta.style.color = "green";
+            form.reset();
+        });
+    </script>
+</body>
+</html>

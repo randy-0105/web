@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<?php
+include 'auth_check.php';
+?>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Apoyo para Padres con Hijos con TDAH o Autismo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- HEADER_START -->
+    <header>
+        <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+            <a href="index.html">
+                <img src="IMAGENES/imagenesLogo/IsoLogo1.png" alt="Unikids Logo" style="height: 50px;" />
+            </a>
+            <a href="index.html" style="font-size: 1.8rem; font-weight: bold; color: #333; text-decoration: none;">Unikids</a>
+        </div>
+        <nav>     
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#">Padres</a>
+                    <ul class="dropdown-content">
+                        <li><a href="parenthood/diagnostico.html">Formulario de Evaluación</a></li>
+                        <li><a href="parenthood/index.html">Testimonios</a></li>
+                        <li><a href="parenthood/consejos.html">Consejos</a></li>
+                        <li><a href="parenthood/feedback.html">Feedback</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Niños</a>
+                    <ul class="dropdown-content">
+                        <li><a href="ninos/Juegos_Educativos/juegos.html">Juegos Educativos</a></li>
+                        <li><a href="ninos\Refuersos Academico\refuersos.html">Refuerzos Académicos</a></li>
+                    </ul>
+                </li>
+                <li><a href="suscripcion.html">Suscripción</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- HEADER_END -->
+<main>
+        <section class="landing">
+            <h1 class="landing-title">Bienvenidos a la plataforma de apoyo para padres con hijos con TDAH</h1>
+            <p>Acceso gratuito por 1 semana para descubrir nuestras herramientas, consejos y actividades educativas.</p>
+            <a href="parenthood/diagnostico.html" class="btn-primary">Comenzar diagnóstico</a>
+        </section>
+
+        <section class="resumen-secciones">
+            <h2>Explora nuestras secciones principales</h2>
+            <div class="secciones-grid">
+                <article class="seccion-card" tabindex="0" role="link" onclick="location.href='parenthood/index.html'" onkeypress="if(event.key==='Enter'){location.href='parenthood/index.html'}">
+                    <h3>Padres</h3>
+                    <p>Encuentra testimonios, consejos prácticos, recordatorios motivadores y un formulario de diagnóstico para personalizar tu experiencia.</p>
+                </article>
+                <article class="seccion-card" tabindex="0" role="link" onclick="location.href='ninos/Juegos_Educativos/juegos.html'" onkeypress="if(event.key==='Enter'){location.href='ninos/Juegos_Educativos/juegos.html'}">
+                    <h3>Niños</h3>
+                    <p>Disfruta de juegos educativos interactivos, videos tutoriales animados y un temporizador inteligente para pausas saludables.</p>
+                </article>
+                <article class="seccion-card" tabindex="0" role="link" onclick="location.href='suscripcion.html'" onkeypress="if(event.key==='Enter'){location.href='suscripcion.html'}">
+                    <h3>Suscripción</h3>
+                    <p>Accede a todas las herramientas y actividades con planes flexibles y pagos seguros vía teléfono.</p>
+                </article>
+                <article class="seccion-card" tabindex="0" role="link" onclick="location.href='contacto.html'" onkeypress="if(event.key==='Enter'){location.href='contacto.html'}">
+                    <h3>Contacto</h3>
+                    <p>¿Tienes preguntas o sugerencias? Contáctanos y estaremos encantados de ayudarte.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER_START -->
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Contacto</h3>
+                <p>Email: contacto@tdah-autismo.com</p>
+                <p>Teléfono: +123 456 7890</p>
+            </div>
+            <div class="social-media">
+                <h3>Síguenos</h3>
+                <ul>
+                    <li><a href="#" aria-label="Instagram">Instagram</a></li>
+                </ul>
+            </div>
+           <div class="quick-links">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="parenthood/index.html">Para Padres</a></li>
+                    <li><a href="ninos/Juegos_Educativos/juegos.html">Para Niños</a></li>
+                    <li><a href="suscripcion.html">Suscripción</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Unikids. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <!-- FOOTER_END -->
+
+    <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
+    <div id="recordatorio-container" class="recordatorio-container" aria-live="polite" aria-atomic="true"></div>
+    <script src="script.js"></script>
+</body>
+</html>
